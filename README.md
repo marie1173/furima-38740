@@ -3,7 +3,6 @@
  
 ## users テーブル
  
-<<<<<<< Updated upstream
 | Column              | Type   | Options                  |
 | ------------------- | ------ | ------------------------ |
 | nickname            | string | null: false              |
@@ -14,18 +13,6 @@
 | family_name_kana    | string | null: false              |
 | first_name_kana     | string | null: false              |
 | date_of_birth       | date   | null: false              |
-=======
-| Column              | Type   | Options     |
-| ------------------- | ------ | ----------- |
-| nickname            | string | null: false |
-| email               | string | null: false |
-| encrypted_password  | string | null: false |
-| family_name         | string | null: false |
-| first_name          | string | null: false |
-| family_name_kana    | string | null: false |
-| first_name_kana     | string | null: false |
-| date_of_birth       | date   | null: false |
->>>>>>> Stashed changes
  
 ### Association
  
@@ -43,10 +30,7 @@
  
 - belongs_to :user
 - belongs_to :item
-<<<<<<< Updated upstream
 - has_one :address
-=======
->>>>>>> Stashed changes
  
 ## items テーブル
  
@@ -78,7 +62,6 @@
 | street_number | string     | null: false                    |
 | building      | string     |                                |
 | phone_number  | string     | null: false                    |
-<<<<<<< Updated upstream
 | order         | references | null: false, foreign_key: true |
 
  
@@ -86,11 +69,3 @@
 
 - belongs_to :order
  
-=======
-| item          | references | null: false, foreign_key: true |
-
- 
-### Association
- 
-- belongs_to :item
->>>>>>> Stashed changes
