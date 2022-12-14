@@ -62,3 +62,5 @@ gem 'pry-rails'
 group :production do
   gem 'pg'
 end
+
+gem 'active_hash'
