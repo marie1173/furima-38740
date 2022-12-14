@@ -8,7 +8,7 @@
 | nickname            | string | null: false              |
 | email               | string | null: false, unique:true |
 | encrypted_password  | string | null: false              |
-| family_name         | string | null: false              |
+| family_name         | string | null: false              | 
 | first_name          | string | null: false              |
 | family_name_kana    | string | null: false              |
 | first_name_kana     | string | null: false              |
@@ -26,11 +26,11 @@
 | user          | references | null: false, foreign_key: true |
 | item          | references | null: false, foreign_key: true |
 
-### Association 
+### Association
+ 
 - belongs_to :user
 - belongs_to :item
 - has_one :address
-
  
 ## items テーブル
  
@@ -42,7 +42,7 @@
 | condition_id  | integer    | null: false                    |
 | fee_id        | integer    | null: false                    |
 | prefecture_id | integer    | null: false                    |
-| days_id       | integer    | null: false                    |
+| day_id        | integer    | null: false                    |
 | price         | integer    | null: false                    |
 | user          | references | null: false, foreign_key: true |
  
@@ -50,10 +50,9 @@
  
 - belongs_to :user
 - has_one :order
-- has_one :address
 
  
-## orders テーブル
+## addresses テーブル
  
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
@@ -63,12 +62,10 @@
 | street_number | string     | null: false                    |
 | building      | string     |                                |
 | phone_number  | string     | null: false                    |
-| item          | references | null: false, foreign_key: true |
 | order         | references | null: false, foreign_key: true |
 
  
 ### Association
- 
-- belongs_to :item
-- belongs_to :order
 
+- belongs_to :order
+ 
