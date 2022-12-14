@@ -3,16 +3,16 @@
  
 ## users テーブル
  
-| Column              | Type   | Options     |
-| ------------------- | ------ | ----------- |
-| nickname            | string | null: false |
-| email               | string | null: false |
-| encrypted_password  | string | null: false |
-| family_name         | string | null: false |
-| first_name          | string | null: false |
-| family_name_kana    | string | null: false |
-| first_name_kana     | string | null: false |
-| date_of_birth       | date   | null: false |
+| Column              | Type   | Options                  |
+| ------------------- | ------ | ------------------------ |
+| nickname            | string | null: false              |
+| email               | string | null: false, unique:true |
+| encrypted_password  | string | null: false              |
+| family_name         | string | null: false              |
+| first_name          | string | null: false              |
+| family_name_kana    | string | null: false              |
+| first_name_kana     | string | null: false              |
+| date_of_birth       | date   | null: false              |
  
 ### Association
  
@@ -26,10 +26,11 @@
 | user          | references | null: false, foreign_key: true |
 | item          | references | null: false, foreign_key: true |
 
-### Association
- 
+### Association 
 - belongs_to :user
 - belongs_to :item
+- has_one :address
+
  
 ## items テーブル
  
@@ -63,8 +64,11 @@
 | building      | string     |                                |
 | phone_number  | string     | null: false                    |
 | item          | references | null: false, foreign_key: true |
+| order         | references | null: false, foreign_key: true |
 
  
 ### Association
  
 - belongs_to :item
+- belongs_to :order
+
