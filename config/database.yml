@@ -8,7 +8,7 @@ development:
   username: root
   password:
   host: localhost
-  database: ajax_app_development
+  database: furima-38740_development
 
 test:
   <<: *default
@@ -16,9 +16,10 @@ test:
   username: root
   password:
   host: localhost
-  database: ajax_app_test
+  database: furima-38740_test
 
 production:
   <<: *default
   adapter: postgresql
   url: <%= ENV['DATABASE_URL'] %>
+  
