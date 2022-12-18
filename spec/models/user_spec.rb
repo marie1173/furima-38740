@@ -91,10 +91,20 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Family name kana is invalid")
       end
+      it '姓（カナ）は空では登録できない' do
+        @user.family_name_kana = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Family name kana can't be blank")
+      end
       it '名（カナ）にカタカナ以外の文字（平仮名・漢字・英数字・記号）が含まれていると登録できない' do
         @user.first_name_kana = '田中'
         @user.valid?
         expect(@user.errors.full_messages).to include("First name kana is invalid")
+      end
+      it '名（カナ）は空では登録できない' do
+        @user.first_name_kana = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("First name kana can't be blank")
       end
       it '生年月日は空では登録できない' do
         @user.date_of_birth = ''
