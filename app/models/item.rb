@@ -16,6 +16,8 @@ class Item < ApplicationRecord
   validates :fee_id, presence: true
   validates :prefecture_id, presence: true
   validates :day_id, presence: true
+  validates :price, format: { with: /\A[0-9]+\z/ }
+  validates :price, numericality: { in: 300..9_999_999 }
   validates :price, presence: true
 
   validates :category_id, numericality: { other_than: 1 , message: "can't be blank"}
