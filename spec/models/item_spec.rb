@@ -11,8 +11,10 @@ RSpec.describe Item, type: :model do
         expect(@item).to be_valid
       end
     end
+
     context '正常に登録できない時' do
-      it 'item_nameが空では登録できない' do
+      it 'imageが空では登録できない' do
+
         @item.image = nil
         @item.valid?
         expect(@item.errors.full_messages).to include "Image can't be blank"
@@ -67,15 +69,15 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include "Prefecture can't be blank"
       end
-      it 'day_idが空では登録できない' do
-        @item.day_id = ''
+      it 'scheduled_day_idが空では登録できない' do
+        @item.scheduled_day_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include "Day can't be blank"
+        expect(@item.errors.full_messages).to include "Scheduled day can't be blank"
       end
-      it 'day_idが1では登録できない' do
-        @item.day_id = 1
+      it 'scheduled_day_idが1では登録できない' do
+        @item.scheduled_day_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include "Day can't be blank"
+        expect(@item.errors.full_messages).to include "Scheduled day can't be blank"
       end
       it 'priceが空では登録できない' do
         @item.price = ''
