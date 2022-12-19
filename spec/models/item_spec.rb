@@ -72,8 +72,8 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include "Day can't be blank"
       end
-      it 'day_idが空では登録できない' do
-        @item.day_id = ''
+      it 'day_idが1では登録できない' do
+        @item.day_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include "Day can't be blank"
       end
