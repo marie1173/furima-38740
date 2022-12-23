@@ -8,7 +8,7 @@ RSpec.describe Item, type: :model do
   describe '商品出品' do
     context '正常に登録できる時' do
       it '全ての条件が揃った場合に商品登録ができる' do
-        expect(@item).to be_valid
+        expect(@item).to be_valid 
       end
     end
 
