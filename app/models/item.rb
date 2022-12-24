@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :scheduled_day
 
   belongs_to :user
+  has_one :order
   has_one_attached :image
 
   validates :image, presence: true
